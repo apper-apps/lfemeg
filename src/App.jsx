@@ -83,9 +83,36 @@ function App() {
               </div>
             </div>
           </div>
+</section>
+
+        <section id="features" className="features-section">
+          <div className="container">
+            <h2 className="section-title">Why Choose Our Schema Generator?</h2>
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Generate valid JSON-LD schema markup in seconds with our optimized generator engine.</p>
+              </div>
+              <div className="feature-card">
+                <div className="icon">✅</div>
+                <h3>Instant Validation</h3>
+                <p>Built-in validation ensures your schema markup is error-free and search engine ready.</p>
+              </div>
+              <div className="feature-card">
+                <div className="icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>Fully responsive design works perfectly on all devices and screen sizes.</p>
+              </div>
+              <div className="feature-card">
+                <div className="icon">🔧</div>
+                <h3>Easy to Use</h3>
+                <p>Simple interface makes schema generation accessible to both beginners and experts.</p>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
-
       <footer>
         <div className="container">
           <p>&copy; 2024 Schema Boost Pro. All rights reserved.</p>
