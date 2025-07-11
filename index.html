@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free JSON-LD Schema Generator & Validator Tool - Boost Your SEO</title>
+    <meta name="description" content="Free online tool to generate and validate SEO-optimized JSON-LD structured data for FAQs, Articles, Products, Local Businesses, and more.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Free JSON-LD Schema Generator & Validator Tool">
+    <meta property="og:description" content="Generate and validate Article, FAQs, Product, Organization, and more schema in seconds">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free JSON-LD Schema Generator & Validator Tool">
+    <meta name="twitter:description" content="Generate and validate Article, FAQs, Product, Organization, and more schema in seconds">
+    <meta name="twitter:image" content="https://example.com/og-image.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Free JSON-LD Schema Generator & Validator Tool",
+      "url": "https://example.com/",
+      "description": "Free online tool to generate and validate SEO-optimized JSON-LD structured data for FAQs, Articles, Products, Local Businesses, and more.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://example.com/#tool",
+        "query-input": "required name=schemaType"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        /* Animated gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #5B21B6 0%, #7C3AED 50%, #8B5CF6 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Pulse animation for CTA button */
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .header-scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #5B21B6, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #5B21B6;
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #5B21B6, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Schema Types Grid */
+        .schema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .schema-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .schema-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(91, 33, 182, 0.15);
+            border-color: #7C3AED;
+        }
+        
+        .schema-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .schema-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card .icon {
+            font-size: 2.5rem;
+            color: #5B21B6;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+        
+        .feature-card p {
+            color: #6B7280;
+            line-height: 1.6;
+        }
+        
+        /* Tool Section */
+        .tool-section {
+            background: #F9FAFB;
+            padding: 5rem 0;
+        }
+        
+        .tool-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .tool-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #5B21B6;
+        }
+        
+        .code-preview {
+            background: #1F2937;
+            padding: 2rem;
+            border-radius: 12px;
+            color: #F9FAFB;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            overflow-x: auto;
+        }
+        
+        .code-preview h3 {
+            margin-bottom: 1rem;
+            color: #10B981;
+        }
+        
+        .code-output {
+            background: #111827;
+            padding: 1rem;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            min-height: 200px;
+            overflow-x: auto;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #5B21B6, #7C3AED);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(91, 33, 182, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #10B981;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #5B21B6;
+            color: #5B21B6;
+        }
+        
+        .btn-outline:hover {
+            background: #5B21B6;
+            color: white;
+        }
+        
+        /* Toggle buttons */
+        .toggle-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .toggle-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #E5E7EB;
+            background: white;
+            color: #374151;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-btn.active {
+            background: #5B21B6;
+            color: white;
+            border-color: #5B21B6;
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            color: #6B7280;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .testimonial-card .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #5B21B6, #7C3AED);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            color: #6B7280;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card .author {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #374151;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #F9FAFB;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .faq-answer p {
+            color: #6B7280;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #5B21B6;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1F2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #10B981;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: #D1D5DB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #10B981;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            color: #D1D5DB;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #10B981;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+        }
+        
+        /* Ads */
+        .ads {
+            background: #F3F4F6;
+            border: 2px dashed #D1D5DB;
+            padding: 2rem;
+            text-align: center;
+            color: #6B7280;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #5B21B6, #7C3AED);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(91, 33, 182, 0.3);
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #5B21B6, #7C3AED);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: #10B981;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .toast.error {
+            background: #EF4444;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .tool-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .schema-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">Schema Boost Pro</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#schemas">Schemas</a></li>
+                <li><a href="#tool">Generator</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero gradient-bg" id="home">
+        <div class="hero-content">
+            <h1>Boost Your SEO with JSON-LD Structured Data</h1>
+            <p>Generate and validate Article, FAQs, Product, Organization, and more schema in seconds</p>
+            <a href="#tool" class="cta-button pulse-btn">Generate Schema Now</a>
+        </div>
+    </section>
+
+    <!-- Ad Slot 1 -->
+    <div class="ads">
+        <p>Advertisement Space</p>
+    </div>
+
+    <!-- Schema Types Section -->
+    <section class="section" id="schemas">
+        <div class="container">
+            <h2 class="section-title">Supported Schema Types</h2>
+            <div class="schema-grid">
+                <div class="schema-card" data-schema="article">
+                    <div class="icon">📄</div>
+                    <h3>Article</h3>
+                </div>
+                <div class="schema-card" data-schema="faq">
+                    <div class="icon">❓</div>
+                    <h3>FAQ</h3>
+                </div>
+                <div class="schema-card" data-schema="product">
+                    <div class="icon">🛍️</div>
+                    <h3>Product</h3>
+                </div>
+                <div class="schema-card" data-schema="organization">
+                    <div class="icon">🏢</div>
+                    <h3>Organization</h3>
+                </div>
+                <div class="schema-card" data-schema="localbusiness">
+                    <div class="icon">🏪</div>
+                    <h3>Local Business</h3>
+                </div>
+                <div class="schema-card" data-schema="person">
+                    <div class="icon">👤</div>
+                    <h3>Person</h3>
+                </div>
+                <div class="schema-card" data-schema="event">
+                    <div class="icon">🎉</div>
+                    <h3>Event</h3>
+                </div>
+                <div class="schema-card" data-schema="recipe">
+                    <div class="icon">🍳</div>
+                    <h3>Recipe</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Schema Generator?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Generate valid JSON-LD schema markup in seconds with our optimized generator engine.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✅</div>
+                    <h3>Instant Validation</h3>
+                    <p>Built-in validation ensures your schema markup is error-free and search engine ready.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Fully responsive design works perfectly on all devices and screen sizes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔧</div>
+                    <h3>Easy to Use</h3>
+                    <p>Simple interface makes schema generation accessible to both beginners and experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Slot 2 -->
+    <div class="ads">
+        <p>Advertisement Space</p>
+    </div>
+
+    <!-- Tool Section -->
+    <section class="tool-section" id="tool">
+        <div class="container">
+            <h2 class="section-title">JSON-LD Schema Generator & Validator</h2>
+            <div class="tool-container">
+                <div class="tool-form">
+                    <div class="form-group">
+                        <label for="schemaType">Select Schema Type:</label>
+                        <select id="schemaType">
+                            <option value="">Choose a schema type...</option>
+                            <option value="article">Article</option>
+                            <option value="faq">FAQ</option>
+                            <option value="product">Product</option>
+                            <option value="organization">Organization</option>
+                            <option value="localbusiness">Local Business</option>
+                            <option value="person">Person</option>
+                            <option value="event">Event</option>
+                            <option value="recipe">Recipe</option>
+                        </select>
+                    </div>
+                    <div id="dynamicFields"></div>
+                </div>
+                <div class="code-preview">
+                    <div class="toggle-buttons">
+                        <button class="toggle-btn active" id="prettifyBtn">Prettified</button>
+                        <button class="toggle-btn" id="minifyBtn">Minified</button>
+                    </div>
+                    <h3>Generated JSON-LD Schema:</h3>
+                    <div class="code-output" id="codeOutput">
+                        Select a schema type and fill in the fields to generate JSON-LD markup.
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="copyBtn">
+                            <i class="fas fa-copy"></i> Copy Code
+                        </button>
+                        <button class="btn btn-secondary" id="downloadBtn">
+                            <i class="fas fa-download"></i> Download JSON
+                        </button>
+                        <button class="btn btn-outline" id="validateBtn">
+                            <i class="fas fa-check-circle"></i> Validate Markup
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">What is JSON-LD?</h2>
+            <div class="about-content">
+                <p>JSON-LD (JavaScript Object Notation for Linked Data) is a method of encoding structured data using JSON. It's a powerful way to add context to your web content, helping search engines understand your pages better and potentially improving your search rankings.</p>
+                <p>Structured data markup helps search engines display rich snippets in search results, which can significantly improve click-through rates and user engagement. Our tool makes it easy to generate valid JSON-LD schema markup for various content types.</p>
+                <p>By implementing structured data on your website, you're providing search engines with explicit clues about the meaning and context of your content, leading to better SEO performance and enhanced search result appearances.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="avatar">SM</div>
+                    <p>"This tool saved me hours of work! The generated schema is always valid and helped improve my site's search rankings significantly."</p>
+                    <div class="author">Sarah Mitchell, SEO Specialist</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="avatar">JD</div>
+                    <p>"Perfect for beginners like me. The interface is intuitive and the validation feature gives me confidence in my schema markup."</p>
+                    <div class="author">John Davis, Web Developer</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="avatar">EL</div>
+                    <p>"I use this tool daily for my clients. It's reliable, fast, and supports all the schema types I need for local businesses."</p>
+                    <div class="author">Emily Lopez, Digital Marketer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is structured data and why is it important?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Structured data is a standardized format for providing information about a page and classifying its content. It helps search engines understand your content better and can lead to rich snippets in search results, improving visibility and click-through rates.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this tool free to use?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our JSON-LD schema generator is completely free to use. There are no limits on the number of schemas you can generate or download.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do I implement the generated schema on my website?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply copy the generated JSON-LD code and paste it into the &lt;head&gt; section of your HTML page within &lt;script type="application/ld+json"&gt; tags.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will this improve my search rankings?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While structured data itself is not a direct ranking factor, it can help search engines understand your content better and may lead to rich snippets, which can improve click-through rates and user engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Ad Slot 3 -->
+    <div class="ads">
+        <p>Advertisement Space</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Schema Boost Pro</h3>
+                    <p>Your go-to tool for generating SEO-optimized JSON-LD structured data markup.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#tool">Generator</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Schema Boost Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                answer.classList.toggle('open');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Schema type selection
+        const schemaTypeSelect = document.getElementById('schemaType');
+        const dynamicFields = document.getElementById('dynamicFields');
+        const codeOutput = document.getElementById('codeOutput');
+        
+        const schemaFields = {
+            article: [
+                { name: 'headline', type: 'text', required: true, placeholder: 'Article title' },
+                { name: 'author', type: 'text', required: true, placeholder: 'Author name' },
+                { name: 'datePublished', type: 'date', required: true, placeholder: 'Publication date' },
+                { name: 'description', type: 'textarea', required: true, placeholder: 'Article description' },
+                { name: 'image', type: 'url', required: false, placeholder: 'Image URL' },
+                { name: 'publisher', type: 'text', required: false, placeholder: 'Publisher name' }
+            ],
+            faq: [
+                { name: 'question1', type: 'text', required: true, placeholder: 'First question' },
+                { name: 'answer1', type: 'textarea', required: true, placeholder: 'First answer' },
+                { name: 'question2', type: 'text', required: false, placeholder: 'Second question' },
+                { name: 'answer2', type: 'textarea', required: false, placeholder: 'Second answer' },
+                { name: 'question3', type: 'text', required: false, placeholder: 'Third question' },
+                { name: 'answer3', type: 'textarea', required: false, placeholder: 'Third answer' }
+            ],
+            product: [
+                { name: 'name', type: 'text', required: true, placeholder: 'Product name' },
+                { name: 'description', type: 'textarea', required: true, placeholder: 'Product description' },
+                { name: 'price', type: 'number', required: true, placeholder: 'Price' },
+                { name: 'priceCurrency', type: 'text', required: true, placeholder: 'Currency code (e.g., USD)' },
+                { name: 'brand', type: 'text', required: false, placeholder: 'Brand name' },
+                { name: 'image', type: 'url', required: false, placeholder: 'Product image URL' },
+                { name: 'availability', type: 'select', required: false, options: ['InStock', 'OutOfStock', 'PreOrder'] }
+            ],
+            organization: [
+                { name: 'name', type: 'text', required: true, placeholder: 'Organization name' },
+                { name: 'url', type: 'url', required: true, placeholder: 'Website URL' },
+                { name: 'description', type: 'textarea', required: true, placeholder: 'Organization description' },
+                { name: 'logo', type: 'url', required: false, placeholder: 'Logo URL' },
+                { name: 'contactPoint', type: 'text', required: false, placeholder: 'Contact phone' },
+                { name: 'address', type: 'text', required: false, placeholder: 'Address' }
+            ],
+            localbusiness: [
+                { name: 'name', type: 'text', required: true, placeholder: 'Business name' },
+                { name: 'description', type: 'textarea', required: true, placeholder: 'Business description' },
+                { name: 'address', type: 'text', required: true, placeholder: 'Full address' },
+                { name: 'telephone', type: 'text', required: true, placeholder: 'Phone number' },
+                { name: 'url', type: 'url', required: false, placeholder: 'Website URL' },
+                { name: 'priceRange', type: 'text', required: false, placeholder: 'Price range (e.g., $$)' },
+                { name: 'openingHours', type: 'text', required: false, placeholder: 'Opening hours' }
+            ],
+            person: [
+                { name: 'name', type: 'text', required: true, placeholder: 'Full name' },
+                { name: 'jobTitle', type: 'text', required: false, placeholder: 'Job title' },
+                { name: 'worksFor', type: 'text', required: false, placeholder: 'Company name' },
+                { name: 'url', type: 'url', required: false, placeholder: 'Website URL' },
+                { name: 'email', type: 'email', required: false, placeholder: 'Email address' },
+                { name: 'image', type: 'url', required: false, placeholder: 'Photo URL' }
+            ],
+            event: [
+                { name: 'name', type: 'text', required: true, placeholder: 'Event name' },
+                { name: 'description', type: 'textarea', required: true, placeholder: 'Event description' },
+                { name: 'startDate', type: 'datetime-local', required: true, placeholder: 'Start date and time' },
+                { name: 'endDate', type: 'datetime-local', required: false, placeholder: 'End date and time' },
+                { name: 'location', type: 'text', required: true, placeholder: 'Event location' },
+                { name: 'organizer', type: 'text', required: false, placeholder: 'Organizer name' },
+                { name: 'url', type: 'url', required: false, placeholder: 'Event URL' }
+            ],
+            recipe: [
+                { name: 'name', type: 'text', required: true, placeholder: 'Recipe name' },
+                { name: 'description', type: 'textarea', required: true, placeholder: 'Recipe description' },
+                { name: 'cookTime', type: 'text', required: true, placeholder: 'Cook time (e.g., PT30M)' },
+                { name: 'prepTime', type: 'text', required: false, placeholder: 'Prep time (e.g., PT15M)' },
+                { name: 'recipeYield', type: 'text', required: false, placeholder: 'Servings' },
+                { name: 'recipeIngredient', type: 'textarea', required: true, placeholder: 'Ingredients (one per line)' },
+                { name: 'recipeInstructions', type: 'textarea', required: true, placeholder: 'Instructions (one per line)' }
+            ]
+        };
+
+        let currentSchema = null;
+        let isPrettified = true;
+
+        schemaTypeSelect.addEventListener('change', function() {
+            const selectedType = this.value;
+            if (selectedType && schemaFields[selectedType]) {
+                generateFormFields(selectedType);
+            } else {
+                dynamicFields.innerHTML = '';
+                codeOutput.textContent = 'Select a schema type and fill in the fields to generate JSON-LD markup.';
+            }
+        });
+
+        function generateFormFields(schemaType) {
+            const fields = schemaFields[schemaType];
+            let html = '';
+            
+            fields.forEach(field => {
+                html += `<div class="form-group">`;
+                html += `<label for="${field.name}">${field.name.charAt(0).toUpperCase() + field.name.slice(1)}${field.required ? ' *' : ''}</label>`;
+                
+                if (field.type === 'textarea') {
+                    html += `<textarea id="${field.name}" name="${field.name}" placeholder="${field.placeholder}" ${field.required ? 'required' : ''}></textarea>`;
+                } else if (field.type === 'select') {
+                    html += `<select id="${field.name}" name="${field.name}" ${field.required ? 'required' : ''}>`;
+                    html += `<option value="">Select...</option>`;
+                    field.options.forEach(option => {
+                        html += `<option value="${option}">${option}</option>`;
+                    });
+                    html += `</select>`;
+                } else {
+                    html += `<input type="${field.type}" id="${field.name}" name="${field.name}" placeholder="${field.placeholder}" ${field.required ? 'required' : ''}>`;
+                }
+                
+                html += `</div>`;
+            });
+            
+            dynamicFields.innerHTML = html;
+            
+            // Add event listeners to all form fields
+            dynamicFields.querySelectorAll('input, textarea, select').forEach(field => {
+                field.addEventListener('input', generateSchema);
+            });
+            
+            generateSchema();
+        }
+
+        function generateSchema() {
+            const schemaType = schemaTypeSelect.value;
+            if (!schemaType) return;
+            
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": getSchemaType(schemaType)
+            };
+            
+            const formData = new FormData();
+            const inputs = dynamicFields.querySelectorAll('input, textarea, select');
+            
+            inputs.forEach(input => {
+                if (input.value) {
+                    formData.append(input.name, input.value);
+                }
+            });
+            
+            // Process form data based on schema type
+            if (schemaType === 'article') {
+                if (formData.get('headline')) schema.headline = formData.get('headline');
+                if (formData.get('author')) schema.author = { "@type": "Person", "name": formData.get('author') };
+                if (formData.get('datePublished')) schema.datePublished = formData.get('datePublished');
+                if (formData.get('description')) schema.description = formData.get('description');
+                if (formData.get('image')) schema.image = formData.get('image');
+                if (formData.get('publisher')) schema.publisher = { "@type": "Organization", "name": formData.get('publisher') };
+            } else if (schemaType === 'faq') {
+                const questions = [];
+                for (let i = 1; i <= 3; i++) {
+                    const question = formData.get(`question${i}`);
+                    const answer = formData.get(`answer${i}`);
+                    if (question && answer) {
+                        questions.push({
+                            "@type": "Question",
+                            "name": question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": answer
+                            }
+                        });
+                    }
+                }
+                if (questions.length > 0) {
+                    schema.mainEntity = questions;
+                }
+            } else if (schemaType === 'product') {
+                if (formData.get('name')) schema.name = formData.get('name');
+                if (formData.get('description')) schema.description = formData.get('description');
+                if (formData.get('price')) {
+                    schema.offers = {
+                        "@type": "Offer",
+                        "price": formData.get('price'),
+                        "priceCurrency": formData.get('priceCurrency') || 'USD'
+                    };
+                    if (formData.get('availability')) {
+                        schema.offers.availability = `https://schema.org/${formData.get('availability')}`;
+                    }
+                }
+                if (formData.get('brand')) schema.brand = { "@type": "Brand", "name": formData.get('brand') };
+                if (formData.get('image')) schema.image = formData.get('image');
+            } else if (schemaType === 'organization') {
+                if (formData.get('name')) schema.name = formData.get('name');
+                if (formData.get('url')) schema.url = formData.get('url');
+                if (formData.get('description')) schema.description = formData.get('description');
+                if (formData.get('logo')) schema.logo = formData.get('logo');
+                if (formData.get('contactPoint')) {
+                    schema.contactPoint = {
+                        "@type": "ContactPoint",
+                        "telephone": formData.get('contactPoint')
+                    };
+                }
+                if (formData.get('address')) schema.address = formData.get('address');
+            } else if (schemaType === 'localbusiness') {
+                if (formData.get('name')) schema.name = formData.get('name');
+                if (formData.get('description')) schema.description = formData.get('description');
+                if (formData.get('address')) schema.address = formData.get('address');
+                if (formData.get('telephone')) schema.telephone = formData.get('telephone');
+                if (formData.get('url')) schema.url = formData.get('url');
+                if (formData.get('priceRange')) schema.priceRange = formData.get('priceRange');
+                if (formData.get('openingHours')) schema.openingHours = formData.get('openingHours');
+            } else if (schemaType === 'person') {
+                if (formData.get('name')) schema.name = formData.get('name');
+                if (formData.get('jobTitle')) schema.jobTitle = formData.get('jobTitle');
+                if (formData.get('worksFor')) schema.worksFor = { "@type": "Organization", "name": formData.get('worksFor') };
+                if (formData.get('url')) schema.url = formData.get('url');
+                if (formData.get('email')) schema.email = formData.get('email');
+                if (formData.get('image')) schema.image = formData.get('image');
+            } else if (schemaType === 'event') {
+                if (formData.get('name')) schema.name = formData.get('name');
+                if (formData.get('description')) schema.description = formData.get('description');
+                if (formData.get('startDate')) schema.startDate = formData.get('startDate');
+                if (formData.get('endDate')) schema.endDate = formData.get('endDate');
+                if (formData.get('location')) schema.location = { "@type": "Place", "name": formData.get('location') };
+                if (formData.get('organizer')) schema.organizer = { "@type": "Organization", "name": formData.get('organizer') };
+                if (formData.get('url')) schema.url = formData.get('url');
+            } else if (schemaType === 'recipe') {
+                if (formData.get('name')) schema.name = formData.get('name');
+                if (formData.get('description')) schema.description = formData.get('description');
+                if (formData.get('cookTime')) schema.cookTime = formData.get('cookTime');
+                if (formData.get('prepTime')) schema.prepTime = formData.get('prepTime');
+                if (formData.get('recipeYield')) schema.recipeYield = formData.get('recipeYield');
+                if (formData.get('recipeIngredient')) {
+                    schema.recipeIngredient = formData.get('recipeIngredient').split('\n').filter(item => item.trim());
+                }
+                if (formData.get('recipeInstructions')) {
+                    schema.recipeInstructions = formData.get('recipeInstructions').split('\n').filter(item => item.trim()).map(instruction => ({
+                        "@type": "HowToStep",
+                        "text": instruction
+                    }));
+                }
+            }
+            
+            currentSchema = schema;
+            displaySchema();
+        }
+
+        function getSchemaType(type) {
+            const typeMap = {
+                'article': 'Article',
+                'faq': 'FAQPage',
+                'product': 'Product',
+                'organization': 'Organization',
+                'localbusiness': 'LocalBusiness',
+                'person': 'Person',
+                'event': 'Event',
+                'recipe': 'Recipe'
+            };
+            return typeMap[type] || 'Thing';
+        }
+
+        function displaySchema() {
+            if (!currentSchema) return;
+            
+            const jsonString = isPrettified ? 
+                JSON.stringify(currentSchema, null, 2) : 
+                JSON.stringify(currentSchema);
+            
+            codeOutput.textContent = jsonString;
+        }
+
+        // Toggle between prettified and minified
+        const prettifyBtn = document.getElementById('prettifyBtn');
+        const minifyBtn = document.getElementById('minifyBtn');
+
+        prettifyBtn.addEventListener('click', function() {
+            isPrettified = true;
+            prettifyBtn.classList.add('active');
+            minifyBtn.classList.remove('active');
+            displaySchema();
+        });
+
+        minifyBtn.addEventListener('click', function() {
+            isPrettified = false;
+            minifyBtn.classList.add('active');
+            prettifyBtn.classList.remove('active');
+            displaySchema();
+        });
+
+        // Action buttons
+        const copyBtn = document.getElementById('copyBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const validateBtn = document.getElementById('validateBtn');
+
+        copyBtn.addEventListener('click', function() {
+            const code = codeOutput.textContent;
+            navigator.clipboard.writeText(code).then(function() {
+                showToast('Code copied to clipboard!', 'success');
+            }, function() {
+                showToast('Failed to copy code', 'error');
+            });
+        });
+
+        downloadBtn.addEventListener('click', function() {
+            if (!currentSchema) {
+                showToast('No schema to download', 'error');
+                return;
+            }
+            
+            const jsonString = JSON.stringify(currentSchema, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `schema-${schemaTypeSelect.value}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('Schema downloaded successfully!', 'success');
+        });
+
+        validateBtn.addEventListener('click', function() {
+            const code = codeOutput.textContent;
+            if (!code || code === 'Select a schema type and fill in the fields to generate JSON-LD markup.') {
+                showToast('No schema to validate', 'error');
+                return;
+            }
+            
+            // Open Schema.org validator with the generated code
+            const encodedCode = encodeURIComponent(code);
+            const validatorUrl = `https://validator.schema.org/#url=data:application/ld%2Bjson,${encodedCode}`;
+            window.open(validatorUrl, '_blank');
+            showToast('Opening Schema.org validator...', 'success');
+        });
+
+        // Toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast show ${type}`;
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Contact form
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showToast('Thank you for your message! We\'ll get back to you soon.', 'success');
+            contactForm.reset();
+        });
+
+        // Schema card clicks
+        document.querySelectorAll('.schema-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const schemaType = this.dataset.schema;
+                schemaTypeSelect.value = schemaType;
+                schemaTypeSelect.dispatchEvent(new Event('change'));
+                
+                // Scroll to tool section
+                document.getElementById('tool').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .testimonial-card, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
